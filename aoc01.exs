@@ -11,7 +11,6 @@ defmodule Advent1 do
   end
 end
 
-{:ok, input} = File.read("aoc01") 
-values = input |> String.split(~r{(\r\n|\r|\n)}) |> Enum.map(&String.to_integer/1)
+values = File.read("aoc01") |> elem(1) |> String.split(~r{(\r\n|\r|\n)}) |> Enum.map(&String.to_integer/1)
 values |> Advent1.depth |> IO.puts
 values |> Advent1.window |> Advent1.depth |> IO.puts
