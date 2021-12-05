@@ -40,7 +40,6 @@ defmodule Advent3 do
     epsilon * gamma
   end
 
-
   def count2(input) do
     oxygen = loop(input, :oxygen) |> String.split("", trim: true) |> Enum.reverse |> calculate(:pos) |> elem(0) 
     co2 = loop(input, :co2) |> String.split("", trim: true) |> Enum.reverse |> calculate(:pos) |> elem(0)
