@@ -9,9 +9,9 @@ defmodule Advent1 do
     |> Enum.chunk_every(3, 1, :discard)
     |> Enum.map(&Enum.sum/1)
   end
-
 end
 
 {:ok, input} = File.read("aoc01") 
-input |> String.split(~r{(\r\n|\r|\n)}) |> Enum.map(&String.to_integer/1) |> Advent1.depth |> IO.puts
-input |> String.split(~r{(\r\n|\r|\n)}) |> Enum.map(&String.to_integer/1) |> Advent1.window |> Advent1.depth |> IO.puts
+values = input |> String.split(~r{(\r\n|\r|\n)}) |> Enum.map(&String.to_integer/1)
+values |> Advent1.depth |> IO.puts
+values |> Advent1.window |> Advent1.depth |> IO.puts
