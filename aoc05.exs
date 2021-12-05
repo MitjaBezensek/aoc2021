@@ -3,9 +3,7 @@ defmodule Advent5 do
      if x1 != x2 and y1 != y2  do
       []
     else
-      for x <- x1..x2,  y <- y1..y2 do
-        [x, y]
-      end
+      for x <- x1..x2,  y <- y1..y2, do: [x, y]
     end
   end
 
