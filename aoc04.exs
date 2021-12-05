@@ -23,7 +23,6 @@ defmodule Advent4 do
 
   def loop(numbers, boards, part), do: loop(numbers, boards, part, nil, nil)
   def loop([head | tail], boards, part, _, nil) do
-    IO.inspect(Enum.count(boards))
     new_boards = 
       boards
       |> Enum.map(fn b -> mark_number(b, head) end)
