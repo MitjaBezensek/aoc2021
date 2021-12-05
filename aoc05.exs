@@ -9,13 +9,9 @@ defmodule Advent5 do
     end
   end
 
-  def get_step(v1, v2) do
-    cond do
-      v1 == v2 -> 0
-      (v2 - v1) < 0 -> -1
-      true -> 1
-    end
-  end
+  def get_step(v, v), do: 0
+  def get_step(v1, v2) when v1 > v2, do: -1
+  def get_step(_, _), do: 1
 
   def gen2(x, y, x, y, _, _, result), do: [[x, y] | result]
   def gen2(x1, y1, x2, y2, x_step, y_step, result) do
