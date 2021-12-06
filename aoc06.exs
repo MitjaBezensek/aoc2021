@@ -1,13 +1,13 @@
 defmodule Advent6 do
   def gen_map(input), do: Enum.reduce(input, %{}, &(Map.update(&2, &1, 1, fn x -> x + 1 end)))
 
-  def update(days, map) do
-    if Map.has_key?(map, days) do
-      value = Map.get(map, days)
-      if days == 0 do
+  def update(day, map) do
+    if Map.has_key?(map, day) do
+      value = Map.get(map, day)
+      if day == 0 do
         Map.drop(map, [0]) |> Map.put(9, value) |> Map.update(7, value, fn x -> x + value end)
       else
-        Map.drop(map, [days]) |> Map.put(days - 1, value)
+        Map.drop(map, [day]) |> Map.put(day - 1, value)
       end
     else 
       map
